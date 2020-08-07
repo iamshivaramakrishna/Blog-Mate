@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Easy Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Rubik&family=Ubuntu:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="images/blogger.png">
+
+  <div class="header">
+  <nav class="navbar navbar-dark navbar-expand-lg">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">EASY BLOG</p>
+      </div>
+
+        <div class="collapse navbar-collapse" >
+        <ul class="nav navbar-nav navbar-right " id="collapsibleNavbar">
+
+          <!-- 6 -->
+          <li id="home"><a href="/">HOME</a></li>
+          <li id="about"><a href="/about">ABOUT US</a></li>
+          <li id="contact"><a href="/contact">CONTACT US</a></li>
+          <li id="compose"><a href="/compose">COMPOSE</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="thumbnail">
+    <h1>Easy Blog</h1>
+    <p>A Simple Blog Website</p>
+    <a href="/compose" class="btn btn-lg btn-danger">post a blog</a>
+</div>
+</div>
+
+  <body>
+
+
+    <div class="container">
+
+
+
+<div class="homeBody">
+
+<h1>Home</h1>
+<p><%= homeStuff %></p>
+
+<h1>StackOverflow</h1>
+<p>StackOverflow is probably the most active programmer community in the world.<span id="dots">...</span><span id="more">
+   Users can submit questions, browse questions, index related content, and use simple HTML when creating a homepage.
+   On the question page, no ads, sales information, JavaScript windows, etc. will pop up.
+    Recruitment information is also displayed on the right side of the website to provide quality employment channels for developers around the world. </p>
+    <a onclick="myFunction()" id="myBtn">Read more</a>
+</span>
+
+<div class="newPost">
+<%  posts.forEach(function(post) { %>
+<h1> <%=  post.title %> </h1>
+<p> <%=  post.content.substring(0,100) + "..." %>
+<a href="/posts/<%=post.title%>">Read more</a>  </p>
+<% }); %>
+</div>
+</div>
+<%- include("partials/footer")-%>
